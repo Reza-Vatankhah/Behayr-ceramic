@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-image: url(../../assets/img/effectRL.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.advanceSearch {
+    /* margin-top: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px 0 100px 0;
+}
+
+
+.searchBox,
+.input {
+    width: 570px;
+    height: 88px;
+    background-color: #0095da;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 6px 8px rgb(0 149 218 / 16%);
+    outline: none;
+    font-size: 20px;
+
+}
+
+.input:focus {
+    /* margin: 20px; */
+    font-family: "iranyekanwebregular";
+    color: #fff;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    font-family: "iranyekanwebmedium";
+}
+
+.searchBox button {
+    background-color: #0095da;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.input::placeholder {
+    color: #fff;
+    /* padding: 20px; */
+    font-size: 20px;
+    font-family: "iranyekanwebmedium";
+}
+
+.imgCurve {
+    background-image: url(../../assets/img/curve.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 124px;
+    margin-bottom: 40px;
+
+}
+
+@media (max-width: 1400px) {
+    .imgCurve {
+        background-size: 100%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .imgCurve {
+        display: none;
+    }
+}
+
+@media (max-width:990px) {
+
+    .searchBox,
+    .input {
+        height: 50px;
+    }
+}
+
+
+@media (max-width:600px) {
+    .searchBox {
+        width: 400px;
+    }
+}
