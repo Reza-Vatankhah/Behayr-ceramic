@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { notify } from "./toast";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,16 +14,16 @@ import { BsArrowLeft } from "react-icons/bs";
 import * as Yup from "yup";
 
 const SignupSchema = Yup.object().shape({
-  fName: Yup.string()
+  name: Yup.string()
     .min(3, "حداقل طول اسم باید 3 حرف باشد")
     .required("پر کردن این فیلد الزامی است"),
-  lName: Yup.string()
+  family: Yup.string()
     .min(3, "حداقل اسم باید 3 حرف باشد")
     .required("پر کردن این فیلد الزامی است"),
   email: Yup.string()
     .email("ایمیل وارد شده نامعتبر است")
     .required("پر کردن این فیلد الزامی است"),
-  phoneNumber: Yup.string()
+  phone: Yup.string()
     .required("پر کردن این فیلد الزامی است")
     .max(10, "حداکثر باید 10 رقم باشد"),
   password: Yup.string()
@@ -35,6 +36,8 @@ const SignupSchema = Yup.object().shape({
 });
 
 const SignUp = () => {
+  const Navigate = useNavigate();
+  Navigate('/verify')
   return (
     <div className={styles.container}>
       <div className={styles.titleBox}>
@@ -48,17 +51,33 @@ const SignUp = () => {
       </div>
       <Formik
         initialValues={{
-          fName: "",
-          lName: "",
+          name: "",
+          family: "",
           email: "",
-          phoneNumber: "",
+          phone: "",
           password: "",
           confirmPassword: "",
           agree: false,
         }}
         validationSchema={SignupSchema}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={async (values) => {
+
+          const userData = {
+            name: values.name,
+            family: values.family,
+            email: values.email,
+            phone: values.phone,
+            password: values.password,
+            confirmPassword: values.confirmPassword,
+          };
+          axios
+            .post("https://gbscoine.com/behyar/api/api/v1/register", userData)
+            .then((response) => {
+              console.log(response.status);
+              console.log(response.data.message);
+              console.log(response.data.token);
+            })
+            // .catch(error => alert(error.response.data))
         }}
       >
         {({ errors, touched }) => (
@@ -69,16 +88,16 @@ const SignUp = () => {
                   <span>
                     <BiUser />
                   </span>
-                  <Field name="fName" type="text" placeholder="نام" />
+                  <Field name="name" type="text" placeholder="نام" />
                 </div>
-                {errors.fName && touched.fName && (
-                  <span className={styles.error}>{errors.fName}</span>
+                {errors.name && touched.name && (
+                  <span className={styles.error}>{errors.name}</span>
                 )}
               </div>
               <div className={styles.inputAndError}>
-                <Field name="lName" type={"text"} placeholder="نام خانوادگی" />
-                {errors.lName && touched.lName && (
-                  <span className={styles.error}>{errors.lName}</span>
+                <Field name="family" type={"text"} placeholder="نام خانوادگی" />
+                {errors.family && touched.family && (
+                  <span className={styles.error}>{errors.family}</span>
                 )}
               </div>
             </div>
@@ -101,13 +120,13 @@ const SignUp = () => {
                   <BsPhone />
                 </span>
                 <Field
-                  name="phoneNumber"
+                  name="phone"
                   type={"number"}
                   placeholder="شماره موبایل"
                 />
               </div>
-              {errors.phoneNumber && touched.phoneNumber && (
-                <span className={styles.error}>{errors.phoneNumber}</span>
+              {errors.phone && touched.phone && (
+                <span className={styles.error}>{errors.phone}</span>
               )}
             </div>
 
@@ -148,12 +167,12 @@ const SignUp = () => {
               )}
             </div>
             <div className={styles.buttonsRow}>
-              <button type="submit" className={styles.signupButton}>
-                <p>ثبت نام</p>
-                <span>
-                  <BsArrowLeft />
-                </span>
-              </button>
+                <button type="submit" className={styles.signupButton}>
+                  <p>ثبت نام</p>
+                  <span>
+                    <BsArrowLeft />
+                  </span>
+                </button>
               <div>
                 <span>حساب کاربری دارید؟</span>
                 <button className={styles.loginButton}>وارد شوید</button>
