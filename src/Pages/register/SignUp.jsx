@@ -1,9 +1,7 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
-import { notify } from "./toast";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./SignUp.module.css";
-import { Link, useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import { FiUserPlus } from "react-icons/fi";
 import { BiUser } from "react-icons/bi";
@@ -154,7 +152,7 @@ const SignUp = () => {
                   <BsArrowLeft />
                 </span>
               </button>
-              <div>
+              <div className={styles.loginDiv}>
                 <span>حساب کاربری دارید؟</span>
                 <button className={styles.loginButton}>وارد شوید</button>
               </div>

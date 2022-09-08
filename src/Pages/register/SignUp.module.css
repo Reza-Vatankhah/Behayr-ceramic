@@ -3,7 +3,7 @@
   height: auto;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  padding: 20px;
+  padding: 40px 20px;
   border-radius: 15px;
   margin: 0 auto;
 }
@@ -59,7 +59,8 @@ input {
   justify-content: flex-start;
 }
 
-input[name="lName"], input[name="confirmPassword"] {
+input[name="lName"],
+input[name="confirmPassword"] {
   padding-right: 0;
   width: 90%;
   display: flex;
@@ -116,12 +117,12 @@ input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
 }
 
-input:focus{
+input:focus {
   border-bottom: 1px solid rgb(0, 149, 218);
   transition: border ease 0.3s;
 }
 
-.signupButton{
+.signupButton {
   border-radius: 50px;
   color: white;
   appearance: none;
@@ -139,30 +140,30 @@ input:focus{
   transition: color ease 0.3s;
   transition: background-color ease 0.3s;
 }
-.signupButton:hover{
+.signupButton:hover {
   background: white;
   color: rgb(0, 149, 218);
   transition: color ease 0.3s;
   transition: background-color ease 0.3s;
   box-shadow: rgba(0, 149, 218, 0.3) 0px 7px 29px 0px;
 }
-.signupButton span{
+.signupButton span {
   font-size: 25px;
   height: 25px;
 }
-.signupButton p{
+.signupButton p {
   font-size: 18px;
 }
 
-.buttonsRow{
-margin-top: 35px;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
+.buttonsRow {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.loginButton{
+.loginButton {
   border-radius: 50px;
   color: white;
   appearance: none;
@@ -177,9 +178,8 @@ align-items: center;
   transition: background-color ease 0.3s;
   font-size: 16px;
   margin-right: 10px;
-  
 }
-.loginButton:hover{
+.loginButton:hover {
   background: white;
   color: #3b414d;
   transition: color ease 0.3s;
@@ -187,17 +187,17 @@ align-items: center;
   box-shadow: #3b414d4d 0px 7px 29px 0px;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   width: min-content;
   margin-left: 5px;
 }
-.agreeDiv{
+.agreeDiv {
   margin-top: 30px;
   padding-right: 20px;
-
+  height: 40px;
 }
 
-.inputAndError{
+.inputAndError {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -206,7 +206,7 @@ input[type="checkbox"]{
   margin-right: 10px;
 }
 
-.error{
+.error {
   color: red;
   font-size: 12px;
   font-weight: bold;
@@ -215,11 +215,53 @@ input[type="checkbox"]{
   display: block;
 }
 
-.fullInputAndError{
+.fullInputAndError {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 97%;
   height: 90px;
-  
+}
+
+/* responsive */
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+
+  .inputsRow {
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+  }
+
+  input[name="lName"],
+  input[name="confirmPassword"],
+  input {
+    width: 95%;
+  }
+
+  .inputDivEmail,
+  .inputDivPhone,
+  .fullInputAndError,
+  .inputAndError {
+    width: 100%;
+  }
+
+  .buttonsRow {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .loginDiv{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+  .loginButton{
+    margin-top: 10px;
+  }
 }
