@@ -31,7 +31,7 @@ function Header() {
             <div className={styles.nav}>
               <ul>
                 <li>
-                  <a href="#">صفحه اصلی</a>
+                  <Link to="/">صفحه اصلی</Link>
                 </li>
                 <li>
                   <Link to="/ads">تبلیغات</Link>
