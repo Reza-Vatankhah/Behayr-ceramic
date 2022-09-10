@@ -39,15 +39,26 @@ const SignUp = () => {
   const [status, setStatus] = useState(null);
   const [message, setMessage] = useState(null);
   const [verificationCode, setVerificationCode] = useState(null);
-
+  const [userData, setUserData] = useState({});
   console.log(verificationCode);
   console.log(status);
+  console.log(userData);
 
   const changeInfoHandler = () => {
     setStatus(0);
-    setLoading(false)
+    setLoading(false);
   };
   const confirmHandler = () => {};
+
+  const initialValues = {
+    name: "" || userData.name,
+    family: "" || userData.family,
+    email: "" || userData.email,
+    phone: "" || userData.phone,
+    password: "" || userData.password,
+    confirmPassword: "" || userData.confirmPassword,
+    agree: false || userData.agree,
+  };
 
   return (
     <div className={styles.container}>
@@ -65,7 +76,7 @@ const SignUp = () => {
             <ReactInputVerificationCode
               onChange={setVerificationCode}
               className={styles.inputvalue}
-              placeholder={""}
+              placeholder={"0"}
             />
           </div>
           <div className={styles.buttonsRow}>
@@ -89,25 +100,11 @@ const SignUp = () => {
             </div>
           </div>
           <Formik
-            initialValues={{
-              name: "",
-              family: "",
-              email: "",
-              phone: "",
-              password: "",
-              confirmPassword: "",
-              agree: false,
-            }}
+            enableReinitialize
+            initialValues={initialValues || userData}
             validationSchema={SignupSchema}
             onSubmit={async (values) => {
-              const userData = {
-                name: values.name,
-                family: values.family,
-                email: values.email,
-                phone: values.phone,
-                password: values.password,
-                confirmPassword: values.confirmPassword,
-              };
+              setUserData({ ...values });
               try {
                 setLoading(true);
                 const res = await axios.post(
@@ -120,6 +117,7 @@ const SignUp = () => {
                 console.log(res.data.message);
                 console.log(res.data.token);
               } catch (error) {
+                setLoading(false);
                 console.log(error.message);
               }
             }}
