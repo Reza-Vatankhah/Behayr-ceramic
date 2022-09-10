@@ -46,18 +46,7 @@ const SignUp = () => {
 
   const changeInfoHandler = () => {
     setStatus(0);
-    setLoading(false);
-  };
-  const confirmHandler = () => {};
-
-  const initialValues = {
-    name: "" || userData.name,
-    family: "" || userData.family,
-    email: "" || userData.email,
-    phone: "" || userData.phone,
-    password: "" || userData.password,
-    confirmPassword: "" || userData.confirmPassword,
-    agree: false || userData.agree,
+    setLoading(false)
   };
 
   return (
@@ -78,6 +67,7 @@ const SignUp = () => {
               className={styles.inputvalue}
               placeholder={"0"}
             />
+            <span>{verificationMsg}</span>
           </div>
           <div className={styles.buttonsRow}>
             <button onClick={confirmHandler} className={styles.confirmButton}>
@@ -101,7 +91,7 @@ const SignUp = () => {
           </div>
           <Formik
             enableReinitialize
-            initialValues={initialValues || userData}
+            initialValues={initialValues}
             validationSchema={SignupSchema}
             onSubmit={async (values) => {
               setUserData({ ...values });
@@ -113,6 +103,7 @@ const SignUp = () => {
                 );
                 setStatus(res.status);
                 setMessage(res.data.message);
+                setToken(res.data.token);
                 console.log(res.status);
                 console.log(res.data.message);
                 console.log(res.data.token);
