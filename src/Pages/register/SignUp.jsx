@@ -40,6 +40,7 @@ const SignUp = () => {
   const [message, setMessage] = useState(null);
   const [verificationCode, setVerificationCode] = useState(null);
   const [userData, setUserData] = useState({});
+  const [verificationMsg,setVerificationMsg]=useState("")
   console.log(verificationCode);
   console.log(status);
   console.log(userData);
