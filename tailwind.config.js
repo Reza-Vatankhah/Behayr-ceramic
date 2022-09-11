@@ -6,10 +6,7 @@ module.exports = {
       fontFamily: {
         vazir: ['Vazir', "sans-serif"],
     },
-    backgroundImage: {
-      'pattern': "url('src/assets/img/effect.png')",
-    }
-    },
+  },
   },
   plugins: [],
 }

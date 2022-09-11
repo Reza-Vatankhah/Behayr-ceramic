@@ -12,6 +12,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import ReactInputVerificationCode from "react-input-verification-code";
 import Layout from "../../components/HOC/Layout";
+import { Link } from "react-router-dom";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -245,7 +246,9 @@ const SignUp = () => {
                   </button>
                   <div className={styles.loginDiv}>
                     <span>حساب کاربری دارید؟</span>
+                    <Link to="/login">
                     <button className={styles.loginButton}>وارد شوید</button>
+                    </Link>
                   </div>
                 </div>
               </Form>
