@@ -40,7 +40,6 @@ input {
   outline: none;
   border-bottom: 1px solid rgb(197, 197, 197);
   transition: border ease 0.3s;
-  font-family: "iranyekanwebmedium";
 }
 
 .inputDiv {
@@ -49,11 +48,6 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
-
-
-input::placeholder {
-  font-family: "iranyekanwebmedium";
 }
 
 .inputDiv span {
@@ -76,7 +70,6 @@ input:focus {
   background: rgb(0, 149, 218);
   border: none;
   padding: 12px;
-  font-family: "iranyekanwebmedium";
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -126,7 +119,6 @@ input:focus {
   border: none;
   width: 100px;
   padding: 12px;
-  font-family: "iranyekanwebmedium";
   cursor: pointer;
   transition: color ease 0.3s;
   transition: background-color ease 0.3s;
@@ -146,7 +138,6 @@ input:focus {
   color: red;
   font-size: 12px;
   font-weight: bold;
-  font-family: "iranyekanwebmedium";
   margin: 5px 40px;
   display: block;
 }

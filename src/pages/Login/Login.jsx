@@ -43,8 +43,8 @@ const Login = () => {
           <FiUserPlus />
         </span>
         <div className={styles.title}>
-          <h4>ورود</h4>
-          <p>وارد حساب کاربری خود شوید</p>
+          <h4 className="">ورود</h4>
+          <p className="font-vazir">وارد حساب کاربری خود شوید</p>
         </div>
       </div>
       <Formik
