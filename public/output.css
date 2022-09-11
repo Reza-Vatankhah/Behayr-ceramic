@@ -587,6 +587,15 @@ video {
   display: flex;
 }
 
+.font-vazir {
+  font-family: Vazir, sans-serif;
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 @font-face {
   font-family: vazir;
 
@@ -655,4 +664,8 @@ video {
       format("truetype");
 
   font-display: swap;
+}
+
+span, h1, h2, h3, h4, h5, p, button, a, label{
+  font-family: "vazir";
 }
