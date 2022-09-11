@@ -9,7 +9,7 @@ function Cards() {
   return (
     <div className={styles.container}>
       <div className={styles.cardHead}>
-        <h2>تازه های علمی</h2>
+        <h2 className="font-vazir">تازه های علمی</h2>
         <a href="#">
           <span>مشاهده آرشیو مطالب</span>
           <span>
