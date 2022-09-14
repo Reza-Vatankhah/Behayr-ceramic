@@ -1,4 +1,4 @@
-.container {
+/* .container {
     width: 1170px;
     margin: 0 auto;
 }
@@ -8,12 +8,6 @@
     margin-bottom: 30px;
     padding-bottom: 21px;
     margin-top: 50px;
-}
-.tblig h2 {
-    /* font-size: 22px; */
-    /* color: #555; */
-    /* padding: 20px; */
-    /* margin: 20px; */
 }
 .adsInfo {
     display: flex;
@@ -42,7 +36,6 @@
 }
 .aside ul li:last-child {
     display:block;
-    /* padding: 36px 0px 38px; */
     padding-top: 40px;
     border-bottom: none;
     justify-content: center;
@@ -90,9 +83,7 @@
     align-items: center;
    }
    .aside {
-    /* display: flex; */
     width: 300px;
-    /* margin:0 auto; */
    }
    .main img {
     display: none;
@@ -103,4 +94,4 @@
    .tblig h2 {
     display: none;
    }
-}
+} */

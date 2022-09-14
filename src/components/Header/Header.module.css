@@ -76,6 +76,7 @@
     padding-left: 25px;
     padding: 10px;
     border: 1px solid transparent;
+    width: 50px;
 }
 .navbarLinks:hover {
     background-color: #fff;
