@@ -10,30 +10,17 @@ import { Link } from "react-router-dom";
 import Layout from "../../components/HOC/Layout";
 
 const SignupSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, "حداقل طول اسم باید 3 حرف باشد")
-    .required("پر کردن این فیلد الزامی است"),
-  family: Yup.string()
-    .min(3, "حداقل اسم باید 3 حرف باشد")
-    .required("پر کردن این فیلد الزامی است"),
-  email: Yup.string()
-    .email("ایمیل وارد شده نامعتبر است")
-    .required("پر کردن این فیلد الزامی است"),
   phone: Yup.string()
     .required("پر کردن این فیلد الزامی است")
     .max(10, "حداکثر باید 10 رقم باشد"),
   password: Yup.string()
     .required("پر کردن این فیلد الزامی است")
     .min(6, "حداقل باید 6 کاراکتر باشد"),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "پسورد وارد شده صحیح نیست")
-    .required("پر کردن این فیلد الزامی است"),
-  agree: Yup.bool().oneOf([true], "ابتدا قوانین را تایید کنید"),
 });
 
 const Login = () => {
   const initialValues = {
-    email: "",
+    phone: "",
     password: "",
   };
   return (
@@ -60,7 +47,7 @@ const Login = () => {
                 <span>
                   <AiOutlineMail />
                 </span>
-                <Field name="email" type={"email"} placeholder="ایمیل" />
+                <Field name="phone" type={"number"} placeholder="شماره تماس" />
               </div>
               {errors.email && touched.email && (
                 <span className={styles.error}>{errors.email}</span>

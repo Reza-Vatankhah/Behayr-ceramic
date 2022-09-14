@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 
 const Layout = (WrappedComponent) => {
@@ -7,6 +8,7 @@ const Layout = (WrappedComponent) => {
       <div>
       <Header/>
       <WrappedComponent {...props}/>
+      <Footer/>
     </div>
     )
   }

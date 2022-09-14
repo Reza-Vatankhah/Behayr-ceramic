@@ -31,16 +31,16 @@ function Header() {
             <div className={styles.nav}>
               <ul>
                 <li>
-                  <a href="#">صفحه اصلی</a>
+                  <Link to="/">صفحه اصلی</Link>
                 </li>
                 <li>
                   <Link to="/ads">تبلیغات</Link>
                 </li>
                 <li>
-                  <a href="#">درباره ما</a>
+                <Link to="/ads">درباره ما</Link>
                 </li>
                 <li>
-                  <a href="#">ارتباط با ما</a>
+                <Link to="/ads">ارتباط با ما</Link>
                 </li>
               </ul>
             </div>
@@ -52,9 +52,13 @@ function Header() {
             <div className={styles.list}>
               <ul>
                 <li className={styles.showMoreMenu}>
-                  <a href="#" className={styles.navbarLinks}>
+                  <a href="#" className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px]">
+                    <span className="w-12">
                     آگهی ها
+                    </span>
+                    <span>
                     <IoIosArrowDown className={styles.arrow} />
+                    </span>
                   </a>
                   <div className={styles.moreMenu}>
                     <ul>
@@ -83,7 +87,7 @@ function Header() {
                   </div>
                 </li>
                 <li className={styles.showMoreMenu}>
-                  <a href="#" className={styles.navbarLinks}>
+                  <a href="#" className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px]">
                     اخبار
                     <IoIosArrowDown className={styles.arrow} />
                   </a>
@@ -105,7 +109,7 @@ function Header() {
                   </div>
                 </li>
                 <li className={styles.showMoreMenu}>
-                  <a href="#" className={styles.navbarLinks}>
+                  <a href="#" className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px]">
                     ویدیو های آموزشی
                     <IoIosArrowDown className={styles.arrow} />
                   </a>
@@ -127,7 +131,7 @@ function Header() {
                   </div>
                 </li>
                 <li className={styles.showMoreMenu}>
-                  <a href="#" className={styles.navbarLinks}>
+                  <a href="#" className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px]">
                     خدمات
                     <IoIosArrowDown className={styles.arrow} />
                   </a>

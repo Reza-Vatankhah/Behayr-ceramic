@@ -110,7 +110,6 @@
 .card h2 {
     padding: 10px;
     font-size: 15px;
-    font-family: "IRANSans";
     display: flex;
     justify-content: center;
     color: #555;
@@ -142,7 +141,6 @@
     text-align: justify;
     padding: 0 8px;
     line-height: 30px;
-    font-family: "iranyekanwebregular";
     color: #737373;
 }
 .bigCards p::after {
@@ -159,7 +157,6 @@
     text-align: justify;
     padding: 0 8px;
     line-height: 30px;
-    font-family: "iranyekanwebregular";
     color: #737373;
 }
 .card p::after {

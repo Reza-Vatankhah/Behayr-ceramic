@@ -13,6 +13,8 @@ import axios from "axios";
 import ReactInputVerificationCode from "react-input-verification-code";
 import Layout from "../../components/HOC/Layout";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -42,10 +44,11 @@ const SignUp = () => {
   const [userData, setUserData] = useState([]);
   const [message, setMessage] = useState(null);
   const [token, setToken] = useState("");
+  const [verifyStatus, setVerifyStatus] = useState("");
   const [verificationCode, setVerificationCode] = useState();
 
   console.log(verificationCode);
-  
+  const navigate = useNavigate();
 
   const changeInfoHandler = () => {
     setStatus(0);
@@ -63,9 +66,15 @@ const SignUp = () => {
         console.log(response.data.status);
         console.log(response.data.message);
         console.log(response.data.token);
+        setVerifyStatus(response.data.status);
       });
   };
 
+  useEffect(() => {
+    if (verifyStatus === 200) {
+      navigate("/");
+    }
+  }, [verifyStatus]);
   const initialValues = {
     name: "" || userData.name,
     family: "" || userData.family,
@@ -247,7 +256,7 @@ const SignUp = () => {
                   <div className={styles.loginDiv}>
                     <span>حساب کاربری دارید؟</span>
                     <Link to="/login">
-                    <button className={styles.loginButton}>وارد شوید</button>
+                      <button className={styles.loginButton}>وارد شوید</button>
                     </Link>
                   </div>
                 </div>

@@ -67,16 +67,10 @@
 .list ul {
     list-style-type: none;
     padding: 20px;
+    width: 400px;
 }
 
-.list ul li a {
-    text-decoration: none;
-    color: #a4a4a4;
-    font-size: 15px;
-    padding-left: 25px;
-    padding: 10px;
-    border: 1px solid transparent;
-}
+
 .navbarLinks:hover {
     background-color: #fff;
     padding: 10px;
@@ -290,7 +284,7 @@ nav ul li {
 }
 .showMoreMenu ul{
     position: absolute;
-    top: -1px;
+    top: 6px;
     /* left: -30px; */
     background-color: #fff;
     border-top: 3px solid #0095da;

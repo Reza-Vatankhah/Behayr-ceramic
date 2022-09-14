@@ -54,3 +54,6 @@
       format("truetype");
   font-display: swap;
 }
+span, h1, h2, h3, h4, h5, p, button, a, label{
+  font-family: "vazir";
+}
