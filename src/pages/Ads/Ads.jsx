@@ -10,9 +10,9 @@ import Layout from "../../components/HOC/Layout";
 
 const Ads = () => {
   return (
-    <div className={styles.container}>
+    <div  className='w-full px-10 sm:px-20 mx-auto'>
       <div className={styles.tblig}>
-        <h2>تــبلیغـات</h2>
+        <h2 className='text-xl m-5 text-slate-600'>تــبلیغـات</h2>
       </div>
       <div className={styles.adsInfo}>
         <div className={styles.aside}>

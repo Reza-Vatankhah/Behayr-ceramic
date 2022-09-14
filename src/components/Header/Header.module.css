@@ -70,7 +70,15 @@
     width: 400px;
 }
 
-
+.list ul li a {
+    text-decoration: none;
+    color: #a4a4a4;
+    font-size: 15px;
+    padding-left: 25px;
+    padding: 10px;
+    border: 1px solid transparent;
+    width: 50px;
+}
 .navbarLinks:hover {
     background-color: #fff;
     padding: 10px;
