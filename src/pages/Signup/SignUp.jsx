@@ -111,7 +111,7 @@ const SignUp = () => {
       ) : (
         <div>
           <div className="flex flex-row items-center mt-2 mb-10">
-            <span className="text-2xl h-6 text-[#0095da]">
+            <span className="text-2xl h-6 text-[#0095da] ">
               <FiUserPlus />
             </span>
             <div>

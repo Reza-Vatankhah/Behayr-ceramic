@@ -16,7 +16,6 @@ function Section() {
       .then((res) => setBlogs(res.data));
   };
 
-  console.log(blogs);
   useEffect(() => {
     getBlogsApi();
   }, []);
@@ -76,14 +75,14 @@ function Section() {
         <Carousel responsive={responsive} >
           {blogs.map((blog) => (
             <div className={"w-96 h-auto m-2 rounded-lg text-right"} style={{direction:"rtl"}} key={blog.id}>
-              <Link to="#">
+              <Link to={`/blog/details/${blog.id}`}>
                 <img
                   src={blog.image}
                   className="w-full h-52 rounded-[20px] rounded-br-none shadow-md"
                   alt="blog"
                 />
               </Link>
-              <Link to="#">
+              <Link to={`blog/details/${blog.id}`}>
                 <h4 className="text-base text-[#555] font-semibold hover:text-blue-700 transition-colors duration-500 my-3">
                   {blog.title}
                 </h4>
