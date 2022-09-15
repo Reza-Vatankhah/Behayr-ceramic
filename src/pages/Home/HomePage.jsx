@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from '../../components/Search/Search';
-import Section from './Section';
+import Section from '../../components/LastBlogs/LastBlogs';
 import Cards from '../../components/Cards/Cards';
 import Video from '../../components/Video/Video';
 import Layout from "../../components/HOC/Layout";
@@ -8,10 +8,10 @@ import Layout from "../../components/HOC/Layout";
 const HomePage = () => {
     return (
         <div>
-            <Search/>
+            {/* <Search/> */}
             <Section/>
-            <Video/>
-            <Cards/>
+            {/* <Video/> */}
+            {/* <Cards/> */}
         </div>
     );
 };
