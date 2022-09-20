@@ -5,7 +5,7 @@ import SignUp from "./pages/Signup/SignUp"
 import Login from "./pages/Login/Login"
 import NotFound from "./pages/404/NotFound";
 import BlogDetails from "./components/BlogDetails/BlogDetails";
-
+import ContactUs from "./pages/ContactUs/ContactUs.jsx"
 
 function App() {
   return (
@@ -16,8 +16,11 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path='/notfound' element={<NotFound />} />
-        <Route path='/blog/details/:id' element={<BlogDetails />} />
-        {/* <Route path='/*' element={<Navigate to='/notfound' />} /> */}
+        <Route path='/blog/details/:slug' element={<BlogDetails />} />
+        <Route path='/*' element={<Navigate to='/notfound' />} />
+        <Route path='/contactus' element={<ContactUs/>} />
+
+
       </Routes>
     </div>
   );

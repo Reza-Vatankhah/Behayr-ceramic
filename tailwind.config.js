@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         vazir: ['Vazir', "sans-serif"],
     },
+    transitionProperty: {
+      'left': 'left',
+      'right': 'right',
+    }
   },
   },
   plugins: [],
