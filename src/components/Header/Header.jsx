@@ -1,161 +1,119 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import Logo from "../../assets/img/logo.png";
-
-// styles
-import styles from "./Header.module.css";
-
-//icons
-// import { AiOutlineSearch } from "react-icons/ai";
+// import styles from "./Header.module.css";
 import { TbBell } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { IoIosArrowDown } from "react-icons/io";
 import Hamburger from "./Hamburger";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Header() {
+  const [burger, setBurger] = useState(false);
   return (
-    <div>
-      <header className={styles.siteHeader}>
-        <div className={styles.siteHeaderLogo}>
+    <div className="px-10">
+      <header
+        className={
+          "max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-center mb-[100px]"
+        }
+      >
+        <div className=" bg-[#ffffff] p-[20px] shadow-md w-32 mx-auto lg:mx-4">
           <a href="#">
             <img src={Logo} alt="logo" />
           </a>
         </div>
-        <div className={styles.col}>
-          <div className={styles.navbar}>
-            <div className={styles.news} style={{ display: "flex" }}>
-              <span>اخبار استخدامی :</span>
-              <p>استخدام مهندس سرامیک</p>
+        <div>
+          <div
+            className={
+              "flex justify-between items-center pt-[36px] px-[17px] mb-4"
+            }
+          >
+            <div className={"flex flex-row"}>
+              <span className="text-[#acacac] text-[13px] ml-[5px]">
+                اخبار استخدامی :
+              </span>
+              <p className="text-gray-500 text-sm">استخدام مهندس سرامیک</p>
             </div>
-            <div className={styles.nav}>
-              <ul>
+            <div className="hidden lg:block">
+              <ul className="flex justify-between">
                 <li>
-                  <Link to="/">صفحه اصلی</Link>
+                  <Link
+                    to="/"
+                    className="ml-[28px] text-[#acacac] text-[12px] transition-all duration-200 hover:text-[#858585]"
+                  >
+                    صفحه اصلی
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/ads">تبلیغات</Link>
+                  <Link
+                    to="/ads"
+                    className="ml-[28px] text-[#acacac] text-[12px] transition-all duration-200 hover:text-[#858585]"
+                  >
+                    تبلیغات
+                  </Link>
                 </li>
                 <li>
-                <Link to="/ads">درباره ما</Link>
+                  <Link
+                    to="/about-us"
+                    className="ml-[28px] text-[#acacac] text-[12px] transition-all duration-200 hover:text-[#858585]"
+                  >
+                    درباره ما
+                  </Link>
                 </li>
                 <li>
-                <Link to="/ads">ارتباط با ما</Link>
+                  <Link
+                    to="/contactus"
+                    className="ml-[28px] text-[#acacac] text-[12px] transition-all duration-200 hover:text-[#858585]"
+                  >
+                    ارتباط با ما
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <div className={styles.menu}>
-            <nav className={styles.burgerNav}>
-              <Hamburger />
+          <div
+            className={
+              "flex justify-between items-center bg-[#f3f3f3] py-[8px] px-[12px] rounded-lg w-full mx-auto lg:w-[750px] xl:w-[1000px] h-16"
+            }
+          >
+            <nav className={"block mr-[20px] lg:hidden"}>
+              <button onClick={() => setBurger(true)}>
+                <GiHamburgerMenu />
+              </button>
+              
+              <Hamburger burger={burger} setBurger={setBurger}/>
+              
             </nav>
-            <div className={styles.list}>
-              <ul>
-                <li className={styles.showMoreMenu}>
-                  <a href="#" className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px]">
-                    <span className="w-12">
+            <div className={"hidden lg:block"}>
+              <ul className="flex w-[400px] p-[20px] ">
+                <li className={"relative group"}>
+                  <span className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px] pl-[25px] border-transparent w-[50px]">
                     آگهی ها
-                    </span>
                     <span>
-                    <IoIosArrowDown className={styles.arrow} />
+                      <IoIosArrowDown className={"text-[15px] mx-1"} />
                     </span>
-                  </a>
-                  <div className={styles.moreMenu}>
-                    <ul>
-                      <li>
+                  </span>
+                  <div>
+                    <ul className="group-hover:z-50 group-hover:block absolute top-[6px] bg-[#fff] border-t-2 border-t-[#0095da] rounded-xl py-4 px-4 mt-[35px] w-[133px] hidden ">
+                      <li className="py-2 text-sm text-gray-800 hover:text-[#0095da] transition-colors duration-300 ">
                         <a href="#">متالوژی</a>
                       </li>
-                      <li>
+                      <li className="py-2 text-sm text-gray-800 hover:text-[#0095da] transition-colors duration-300 ">
                         <a href="#">سرامیک</a>
                       </li>
-                      <li>
+                      <li className="py-2 text-sm text-gray-800 hover:text-[#0095da] transition-colors duration-300 ">
                         <a href="#">جوشکاری</a>
                       </li>
-                      <li>
+                      <li className="py-2 text-sm text-gray-800 hover:text-[#0095da] transition-colors duration-300 ">
                         <a href="#">خوردگی</a>
                       </li>
-                      <li>
+                      <li className="py-2 text-sm text-gray-800 hover:text-[#0095da] transition-colors duration-300 ">
                         <a href="#">بیو مواد</a>
                       </li>
-                      <li>
+                      <li className="py-2 text-sm text-gray-800 hover:text-[#0095da] transition-colors duration-300 ">
                         <a href="#">کامپوزیت</a>
                       </li>
-                      <li>
-                        <a href="#">نانو فناوری</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className={styles.showMoreMenu}>
-                  <a href="#" className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px]">
-                    اخبار
-                    <IoIosArrowDown className={styles.arrow} />
-                  </a>
-                  <div className={styles.moreMenu}>
-                    <ul>
-                      <li>
-                        <a href="#">استخدام</a>
-                      </li>
-                      <li>
-                        <a href="#">تازه های علمی</a>
-                      </li>
-                      <li>
-                        <a href="#">همایش</a>
-                      </li>
-                      <li>
-                        <a href="#">کنفرانسها</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className={styles.showMoreMenu}>
-                  <a href="#" className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px]">
-                    ویدیو های آموزشی
-                    <IoIosArrowDown className={styles.arrow} />
-                  </a>
-                  <div className={styles.moreMenu}>
-                    <ul>
-                      <li>
-                        <a href="#">علمی</a>
-                      </li>
-                      <li>
-                        <a href="#">فرهنگی</a>
-                      </li>
-                      <li>
-                        <a href="#">آموزشی</a>
-                      </li>
-                      <li>
-                        <a href="#">درسی</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className={styles.showMoreMenu}>
-                  <a href="#" className="flex flex-row items-center justify-between min-w-max text-[#a4a4a4] text-[15px] p-[10px]">
-                    خدمات
-                    <IoIosArrowDown className={styles.arrow} />
-                  </a>
-                  <div className={styles.moreMenu}>
-                    <ul>
-                      <li>
-                        <a href="#">متالوژی</a>
-                      </li>
-                      <li>
-                        <a href="#">سرامیک</a>
-                      </li>
-                      <li>
-                        <a href="#">جوشکاری</a>
-                      </li>
-                      <li>
-                        <a href="#">خوردگی</a>
-                      </li>
-                      <li>
-                        <a href="#">بیو مواد</a>
-                      </li>
-                      <li>
-                        <a href="#">کامپوزیت</a>
-                      </li>
-                      <li>
+                      <li className="py-2 text-sm text-gray-800 hover:text-[#0095da] transition-colors duration-300 ">
                         <a href="#">نانو فناوری</a>
                       </li>
                     </ul>
@@ -163,11 +121,19 @@ function Header() {
                 </li>
               </ul>
             </div>
-            <div className={styles.icons}>
-              {/* <AiOutlineSearch className={styles.icon} /> */}
-              <TbBell className={styles.icon} />
-              <Link to="/sign-up">
-                <CgProfile className={styles.icon && styles.lastIcon} />
+            <div
+              className={
+                "flex flex-row items-center text-2xl text-[#858585] mx-4"
+              }
+            >
+              <button className="appearance-none mx-4">
+                <TbBell />
+              </button>
+              <Link
+                to="/sign-up"
+                className=" bg-[#0095da] text-[#ffffff] rounded-md shadow-lg mr-4 p-2.5"
+              >
+                <CgProfile />
               </Link>
             </div>
           </div>

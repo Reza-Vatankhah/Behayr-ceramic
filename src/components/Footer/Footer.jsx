@@ -49,11 +49,11 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-row justify-start items-center w-full xl:w-5/6 2xl:w-3/4 my-10 flex-wrap md:flex-nowrap">
-        <div className="w-full md:w-[400px]">
+        <div className="w-full md:w-[600px]">
           <img src={footerImg} alt="footer img" className="w-auto h-auto mx-2"/>
         </div>
         <div className="w-full md:w-auto pt-6">
-          <p className="text-[15px] text-gray-200 ">
+          <p className="text-[14px] text-gray-200 leading-6">
             ایران مواد یک وبسایت محتوایی در حوزه مواد مهندسی است که از سال 1387
             فعالیت خود را با هدف توسعه فن و دانش مهندسی مواد در ایران آغاز نموده
             و همواره برای اعتلای آن تلاش می کند. ایران مواد همچنین یک دایرکتوری
