@@ -48,15 +48,9 @@ const Ads = () => {
               <span className={styles.text}>آمارهای اعلام شده مطابق با مراجع رسمی و معتبر</span>
 
               <div >
-                <span>
-                  <img src={alexa} alt="photo" />
-                </span>
-                <span>
-                  <img src={googleAn} alt="photo" />
-                </span>
-                <span>
-                  <img src={google} alt="photo" />
-                </span>
+                  <img src={alexa} alt="alexa" />
+                  <img src={googleAn} alt="google analyse" />
+                  <img src={google} alt="google" />
               </div>
             </li>
           </ul>
