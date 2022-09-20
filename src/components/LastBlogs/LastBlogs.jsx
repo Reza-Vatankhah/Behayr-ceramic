@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import PersianNumber from "../../PersianNumber";
 
-function Section() {
+function LastBlogs() {
   const [blogs, setBlogs] = useState([]);
 
   const getBlogsApi = () => {
@@ -72,17 +72,18 @@ function Section() {
       </div>
 
       <div className={styles.cards}>
+
         <Carousel responsive={responsive} >
           {blogs.map((blog) => (
             <div className={"w-96 h-auto m-2 rounded-lg text-right"} style={{direction:"rtl"}} key={blog.id}>
-              <Link to={`/blog/details/${blog.id}`}>
+              <Link to={`/blog/details/${blog.slug}`} state={{id:blog.id}}>
                 <img
                   src={blog.image}
                   className="w-full h-52 rounded-[20px] rounded-br-none shadow-md"
                   alt="blog"
                 />
               </Link>
-              <Link to={`blog/details/${blog.id}`}>
+              <Link to={`blog/details/${blog.slug}`} state={{id:blog.id}}>
                 <h4 className="text-base text-[#555] font-semibold hover:text-blue-700 transition-colors duration-500 my-3">
                   {blog.title}
                 </h4>
@@ -98,4 +99,4 @@ function Section() {
   );
 }
 
-export default Section;
+export default LastBlogs;
