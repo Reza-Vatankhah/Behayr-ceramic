@@ -4,7 +4,7 @@ import Ads from "./pages/Ads/Ads";
 import SignUp from "./pages/Signup/SignUp"
 import Login from "./pages/Login/Login"
 import NotFound from "./pages/404/NotFound";
-import BlogDetails from "./components/BlogDetails/BlogDetails";
+import BlogDetails from "./pages/BlogDetails/BlogDetails";
 import ContactUs from "./pages/ContactUs/ContactUs.jsx"
 
 function App() {
@@ -19,8 +19,6 @@ function App() {
         <Route path='/blog/details/:slug' element={<BlogDetails />} />
         <Route path='/*' element={<Navigate to='/notfound' />} />
         <Route path='/contactus' element={<ContactUs/>} />
-
-
       </Routes>
     </div>
   );
