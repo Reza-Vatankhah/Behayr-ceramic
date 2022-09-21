@@ -75,7 +75,7 @@ function LastBlogs() {
 
         <Carousel responsive={responsive} >
           {blogs.map((blog) => (
-            <div className={"w-96 h-auto m-2 rounded-lg text-right"} style={{direction:"rtl"}} key={blog.id}>
+            <div className={"w-96 h-auto m-2 rounded-lg text-right hover:shadow-md transition-shadow duration-300"} style={{direction:"rtl"}} key={blog.id}>
               <Link to={`/blog/details/${blog.slug}`} state={{id:blog.id}}>
                 <img
                   src={blog.image}
@@ -84,12 +84,12 @@ function LastBlogs() {
                 />
               </Link>
               <Link to={`blog/details/${blog.slug}`} state={{id:blog.id}}>
-                <h4 className="text-base text-[#555] font-semibold hover:text-blue-700 transition-colors duration-500 my-3">
+                <h4 className="px-4 text-base text-[#555] font-semibold hover:text-blue-700 transition-colors duration-500 my-3">
                   {blog.title}
                 </h4>
               </Link>
-              <div>
-                <span className="text-xs border-b-2"> <PersianNumber number={createdNumber(blog.created_at)}/> {createdText(blog.created_at)}</span>
+              <div className="p-4 pt-0">
+                <span className=" text-xs border-b-2"> <PersianNumber number={createdNumber(blog.created_at)}/> {createdText(blog.created_at)}</span>
               </div>
             </div>
           ))}
